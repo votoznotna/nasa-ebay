@@ -51,11 +51,14 @@ const MarsImages: React.FC = () => {
       }
       setResultDataSet(photoData);
     };
-    fetchData().catch((error: any) => {
-      console.log(error);
-      setFetchError(true);
-      setDataLoading(false);
-    });
+    const parsedDate = parseDateInput(searchDate);
+    if (searchDate && !!parsedDate) {
+      fetchData().catch((error: any) => {
+        console.log(error);
+        setFetchError(true);
+        setDataLoading(false);
+      });
+    }
   }, [selectedDate, marsImagePage]);
 
   const searhButtonHandler = (e: React.SyntheticEvent) => {
