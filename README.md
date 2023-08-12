@@ -22,6 +22,6 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 - The weather page is not made due to the lack of sufficient weather data using the provided API.
 - Pages for images of Mars are not provided by the API, so only 10 pages are entered for navigation.
 
-## Deploy on Vercel
+## Vercel deployment
 
-Check out [Deployment on Vercel](https://nasa-ebay.vercel.app/) for deployment demo.
+Navigate (https://nasa-ebay.vercel.app/) to see a deployed version.
