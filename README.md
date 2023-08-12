@@ -1,5 +1,3 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
-
 ## Getting Started
 
 First, run the development server:
@@ -14,18 +12,15 @@ pnpm dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## The contstrains
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+- Due to time limitation reason, the Next.js project is using the following 3-d parth libraries:
+  **tailwindcss**, for inline styling,
+  **react-icons**, for icons collection,
+  **zustand**, for state management (keeping the search images inputs persistant)
+- More elaboration is still required to make swapping of photo on home page working well
+- The weather page is not made due to the lack of sufficient weather data using the provided API.
+- Pages for images of Mars are not provided by the API, so only 10 pages are entered for navigation.
 
 ## Deploy on Vercel
 
