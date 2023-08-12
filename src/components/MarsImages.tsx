@@ -101,7 +101,7 @@ const MarsImages: React.FC = () => {
       {noData && <NoDataAlert />}
       {fetchError && <ErrorAlert />}
       {dataLoading && <Loading />}
-      <div className="relative -left-2 sm:grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 max-w-6xl mx-auto">
+      <div className="sm:grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 max-w-6xl mx-auto">
         {resultDataSet &&
           resultDataSet.map((photo: MarsPhoto) => (
             <MarsImage key={photo.id} photo={photo} />
