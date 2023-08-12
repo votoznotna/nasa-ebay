@@ -17,10 +17,10 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 - Due to time limitation reason, the Next.js project is using the following 3-d parth libraries:
   **tailwindcss** (for inline styling),
   **react-icons** (for icons collection),
-  **zustand** (for state management with keeping the search images inputs persistant)
-- More elaboration is still required to make swapping of photo on home page working well
-- The weather page is not made due to the lack of sufficient weather data using the provided API.
-- Pages for images of Mars are not provided by the API, so only 10 pages are entered for navigation.
+  **zustand** (for state management with keeping the search images inputs persistant).
+- More elaboration is still required to make swapping of photo on home page working flawlessly.
+- The Weather page is incomplete due to lack of proper weather data using NASA provided API.
+- The total number of pages for images of Mars is not provided by the NASA API, so a hardcoded 10 pages are introduced for navigation.
 
 ## Vercel deployment
 
