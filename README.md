@@ -25,3 +25,7 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 ## Vercel deployment
 
 Navigate (https://nasa-ebay.vercel.app/) to see a deployed version.
+
+### The challenge gif-shot:
+
+![Demo](nasa-ebay.gif)
