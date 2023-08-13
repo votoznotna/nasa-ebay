@@ -15,9 +15,10 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 ## The contstrains
 
 - Due to time limitation reason, the Next.js project is using the following 3-d parth libraries:
-  **tailwindcss** (for inline styling),
-  **react-icons** (for icons collection),
-  **zustand** (for state management with keeping the search images inputs persistant).
+  **tailwindcss** (for an accelerated inline style),
+  **react-icons** (to use icon collection),
+  **react-input-date-mask** (to use date mask in input component),
+  **zustand** (for state management with persistent saving of search images inputs).
 - More elaboration is still required to make swapping of photo on home page working flawlessly.
 - The Weather page is incomplete due to lack of proper weather data using NASA provided API.
 - The total number of pages for images of Mars is not provided by the NASA API, so a hardcoded 10 pages are introduced for navigation.
