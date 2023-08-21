@@ -27,11 +27,11 @@ const Header: React.FC = () => (
       <DarkModeSwitch />
       <MenuItem title="About" address="/" Icon={FaHome} />
       <MenuItem title="Images by Date" address="/images" Icon={FaRegImages} />
-      <MenuItem
+      {/* <MenuItem
         title="Mars Weather"
         address="/weather"
         Icon={TiWeatherPartlySunny}
-      />
+      /> */}
     </div>
   </div>
 );

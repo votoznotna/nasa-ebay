@@ -33,16 +33,20 @@ const MarsImages: React.FC = () => {
     setSearchDate(value);
   };
 
-  useEffect(() => {
-    const fetchData = async () => {
-      setFetchError(false);
-      setNoData(false);
-      setDataLoading(true);
-      const response = await fetch(
-        `${MARS_PHOTOS_BASE_URL}?api_key=${
-          API_KEY || "DEMO_KEY"
-        }&earth_date=${selectedDate}&page=${marsImagePage}`
-      );
+  const fetchData = async (_selectedDate: string, _marsImagePage: number) => {
+    setFetchError(false);
+    setNoData(false);
+    setDataLoading(true);
+    const response = await fetch(
+      `${MARS_PHOTOS_BASE_URL}?api_key=${
+        API_KEY || "DEMO_KEY"
+      }&earth_date=${_selectedDate}&page=${_marsImagePage}`
+    ).catch((error: any) => {
+      console.log(error);
+      setFetchError(true);
+      setDataLoading(false);
+    });
+    if (response) {
       const data = await response.json();
       setDataLoading(false);
       const photoData = data.photos as Array<MarsPhoto>;
@@ -50,16 +54,19 @@ const MarsImages: React.FC = () => {
         setNoData(true);
       }
       setResultDataSet(photoData);
-    };
+    }
+  };
+
+  useEffect(() => {
     const parsedDate = parseDateInput(searchDate);
-    if (searchDate && !!parsedDate) {
-      fetchData().catch((error: any) => {
+    if (searchDate && !!parsedDate && marsImagePage) {
+      fetchData(selectedDate, marsImagePage).catch((error: any) => {
         console.log(error);
         setFetchError(true);
         setDataLoading(false);
       });
     }
-  }, [selectedDate, marsImagePage]);
+  }, []);
 
   const searhButtonHandler = (e: React.SyntheticEvent) => {
     e.preventDefault();
@@ -68,11 +75,18 @@ const MarsImages: React.FC = () => {
     if (!!parsedDate) {
       setSelectedDate(parsedDate);
       setMarsImageDate(parsedDate, searchDate);
+      fetchData(parsedDate, marsImagePage);
     } else {
       setFetchError(true);
     }
   };
-
+  const pageSelectionHandler = (index: number) => {
+    fetchData(selectedDate, index).catch((error: any) => {
+      console.log(error);
+      setFetchError(true);
+      setDataLoading(false);
+    });
+  };
   return (
     <div className="max-w-6xl mx-auto space-y-4 p-4 mb-5">
       <h2 className="text-2xl font-medium text-black-600">
@@ -107,7 +121,7 @@ const MarsImages: React.FC = () => {
             <MarsImage key={photo.id} photo={photo} />
           ))}
       </div>
-      {resultDataSet && <PagesList />}
+      {resultDataSet && <PagesList onClickHanlder={pageSelectionHandler} />}
     </div>
   );
 };
